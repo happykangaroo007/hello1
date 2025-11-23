@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artisan The Goat | Premium Organic Goat Milk Skincare</title>
+    <meta name="description" content="World's first organic goat milk skincare. Natural anti-aging moisturizers, muscle creams, and luxury formulas from our Portland farm.">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+        
+        /* Header */
+        .announcement {
+            background: #8B0038;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            font-size: 14px;
+        }
+        
+        header {
+            background: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #8B0038;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+        
+        .nav-links a {
+            color: #333;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: #D4145A;
+        }
+        
+        /* Hero */
+        .hero {
+            background: linear-gradient(135deg, #FFF8F3 0%, #FFF0F5 100%);
+            padding: 80px 20px;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 48px;
+            color: #8B0038;
+            margin-bottom: 20px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .hero p {
+            font-size: 20px;
+            color: #666;
+            margin-bottom: 30px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 15px 30px;
+            background: #D4145A;
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: 600;
+            transition: background 0.3s;
+        }
+        
+        .btn:hover {
+            background: #8B0038;
+        }
+        
+        /* Products */
+        .products {
+            padding: 80px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 36px;
+            color: #8B0038;
+            margin-bottom: 50px;
+        }
+        
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+        
+        .product-card {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 3px 15px rgba(0,0,0,0.1);
+            overflow: hidden;
+            transition: transform 0.3s;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .product-image {
+            height: 200px;
+            background: linear-gradient(135deg, #FFF0F5, #FFF8F3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 48px;
+        }
+        
+        .product-info {
+            padding: 20px;
+        }
+        
+        .product-name {
+            font-size: 20px;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 10px;
+        }
+        
+        .product-desc {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 15px;
+        }
+        
+        .product-price {
+            font-size: 24px;
+            color: #8B0038;
+            font-weight: bold;
+        }
+        
+        /* Features */
+        .features {
+            background: #FFF8F3;
+            padding: 60px 20px;
+        }
+        
+        .features-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            text-align: center;
+        }
+        
+        .feature {
+            padding: 20px;
+        }
+        
+        .feature-icon {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+        
+        .feature h3 {
+            font-size: 20px;
+            color: #8B0038;
+            margin-bottom: 10px;
+        }
+        
+        /* Footer */
+        footer {
+            background: #2C2C2C;
+            color: white;
+            padding: 60px 20px 30px;
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin: 20px 0;
+            list-style: none;
+        }
+        
+        .footer-links a {
+            color: #999;
+            text-decoration: none;
+        }
+        
+        .footer-links a:hover {
+            color: white;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .hero h1 {
+                font-size: 32px;
+            }
+            
+            .product-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Announcement Bar -->
+    <div class="announcement">
+        🎉 FREE SHIPPING ON ORDERS OVER $50 | USE CODE: GOATLOVE FOR 15% OFF
+    </div>
+    
+    <!-- Header -->
+    <header>
+        <nav>
+            <div class="logo">🐐 Artisan The Goat</div>
+            <ul class="nav-links">
+                <li><a href="#products">Shop</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#features">Benefits</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>Transform Your Skin with Pure Goat Milk Luxury</h1>
+        <p>World's first organic goat milk skincare, handcrafted on our Portland farm</p>
+        <a href="#products" class="btn">Shop Collection</a>
+    </section>
+    
+    <!-- Products Section -->
+    <section class="products" id="products">
+        <h2 class="section-title">Our Premium Collection</h2>
+        
+        <div class="product-grid">
+            <!-- Face Cream -->
+            <div class="product-card">
+                <div class="product-image">✨</div>
+                <div class="product-info">
+                    <h3 class="product-name">Face Cream</h3>
+                    <p class="product-desc">Daily moisturizer with natural AHAs for radiant skin</p>
+                    <div class="product-price">$34.97</div>
+                </div>
+            </div>
+            
+            <!-- Rejuvenating Cream -->
+            <div class="product-card">
+                <div class="product-image">⏰</div>
+                <div class="product-info">
+                    <h3 class="product-name">Rejuvenating Cream</h3>
+                    <p class="product-desc">Advanced anti-aging formula with peptides</p>
+                    <div class="product-price">$44.97</div>
+                </div>
+            </div>
+            
+            <!-- Superfruits Cream -->
+            <div class="product-card">
+                <div class="product-image">🍓</div>
+                <div class="product-info">
+                    <h3 class="product-name">Superfruits Cream</h3>
+                    <p class="product-desc">Antioxidant-rich blend with exotic superfruits</p>
+                    <div class="product-price">$44.97</div>
+                </div>
+            </div>
+            
+            <!-- Colostrum Cream -->
+            <div class="product-card">
+                <div class="product-image">👑</div>
+                <div class="product-info">
+                    <h3 class="product-name">Colostrum Cream</h3>
+                    <p class="product-desc">Our signature luxury formula with colostrum</p>
+                    <div class="product-price">$44.97</div>
+                </div>
+            </div>
+            
+            <!-- Hand Cream -->
+            <div class="product-card">
+                <div class="product-image">🤲</div>
+                <div class="product-info">
+                    <h3 class="product-name">Hand Cream</h3>
+                    <p class="product-desc">Intensive repair for soft, youthful hands</p>
+                    <div class="product-price">$29.97</div>
+                </div>
+            </div>
+            
+            <!-- Muscle Cream -->
+            <div class="product-card">
+                <div class="product-image">💪</div>
+                <div class="product-info">
+                    <h3 class="product-name">Muscle Cream</h3>
+                    <p class="product-desc">Deep relief with arnica for sore muscles</p>
+                    <div class="product-price">$34.97</div>
+                </div>
+            </div>
+            
+            <!-- Active Cream -->
+            <div class="product-card">
+                <div class="product-image">🏃</div>
+                <div class="product-info">
+                    <h3 class="product-name">Active Cream</h3>
+                    <p class="product-desc">Pre & post workout performance cream</p>
+                    <div class="product-price">$34.99</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Features Section -->
+    <section class="features" id="features">
+        <div class="features-grid">
+            <div class="feature">
+                <div class="feature-icon">🧪</div>
+                <h3>Clinically Proven</h3>
+                <p>Backed by science with proven results</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">🐐</div>
+                <h3>Farm Fresh</h3>
+                <p>From our Portland organic farm</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">🌿</div>
+                <h3>100% Organic</h3>
+                <p>USDA certified, no harsh chemicals</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">🏆</div>
+                <h3>Award Winning</h3>
+                <p>Excellence in natural skincare</p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="logo">🐐 Artisan The Goat</div>
+            <ul class="footer-links">
+                <li><a href="#products">Products</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#shipping">Shipping</a></li>
+            </ul>
+            <p>&copy; 2024 Artisan The Goat. Made with ❤️ in Portland, Oregon</p>
+        </div>
+    </footer>
+</body>
+</html>
